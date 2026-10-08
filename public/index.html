@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShareBox · 视频分享</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 登录遮罩 -->
+<div id="loginMask" class="login-mask hidden">
+  <div class="login-card">
+    <div class="login-logo">📦</div>
+    <h2>ShareBox</h2>
+    <p>请输入访问密码</p>
+    <input type="password" id="pwdInput" placeholder="密码" autocomplete="off">
+    <button id="loginBtn">进入</button>
+    <div id="loginErr" class="err"></div>
+  </div>
+</div>
+
+<div class="app">
+  <header>
+    <div class="logo">📦 ShareBox</div>
+    <div class="subtitle">传视频给朋友 · 不经过第三方</div>
+  </header>
+
+  <!-- 上传区 -->
+  <section class="upload-zone" id="dropZone">
+    <input type="file" id="fileInput" accept="video/*" multiple hidden>
+    <div class="upload-icon">⬆️</div>
+    <div class="upload-text">点击选择或拖拽视频到这里上传</div>
+    <div class="upload-hint">支持 MP4 / WebM / MOV，单文件最大 2GB</div>
+    <div id="uploadList"></div>
+  </section>
+
+  <!-- 文件列表 -->
+  <main>
+    <div class="section-title">我的视频 <span id="count"></span></div>
+    <div id="fileGrid" class="file-grid"></div>
+    <div id="empty" class="empty hidden">还没有视频，传一个吧 👆</div>
+  </main>
+</div>
+
+<!-- 视频预览弹窗 -->
+<div id="previewModal" class="modal hidden">
+  <div class="modal-card">
+    <video id="previewVideo" controls playsinline></video>
+    <div class="modal-info">
+      <div id="previewName" class="modal-name"></div>
+      <div class="modal-actions">
+        <button id="shareBtn" class="btn-primary">🔗 复制分享链接</button>
+        <button id="delBtn" class="btn-danger">🗑 删除</button>
+        <button id="closeModal" class="btn-ghost">关闭</button>
+      </div>
+      <div id="shareTip" class="share-tip"></div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
