@@ -1,0 +1,1 @@
+{"author":"","dependencies":{"@aws-sdk/client-s3":"^3.0.0","@aws-sdk/s3-request-presigner":"^3.0.0","dotenv":"^16.0.0","express":"^4.18.0","multer":"^1.4.5-lts.1"},"description":"ShareBox - 基于 Cloudflare R2 的视频分享网盘","license":"MIT","main":"server.js","name":"sharebox","scripts":{"start":"node server.js"},"version":"1.0.0"}
